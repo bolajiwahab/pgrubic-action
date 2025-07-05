@@ -1,0 +1,87 @@
+name: pgrubic-action
+description: "A GitHub Action to run pgrubic, a PostgreSQL linter and formatter for schema migrations and design best practices."
+inputs:
+  args:
+    description: "Arguments passed to pgrubic. Use `pgrubic --help` to see available options. Defaults to `lint`."
+    required: false
+    default: "lint"
+  src:
+    description: "Source to run pgrubic on. Defaults to the current directory."
+    required: false
+    default: ${{ github.workspace }}
+  pgrubic-version:
+    description: "The version of pgrubic to use, e.g., `0.6.0` Defaults 'latest'."
+    required: false
+    default: "latest"
+  # version-file:
+  #   description: "Path to a pyproject.toml or requirements.txt file to read the version from."
+  #   required: false
+  # checksum:
+  #   description: "The checksum of the pgrubic version to install"
+  #   required: false
+  # github-token:
+  #   description:
+  #     "Used to increase the rate limit when retrieving versions and downloading
+  #     pgrubic."
+  #   required: false
+  #   default: ${{ github.token }}
+outputs:
+  pgrubic-version:
+    description: "The installed pgrubic version. Useful when using latest."
+    value: ${{ steps.install-pgrubic.outputs.pgrubic-version }}
+
+# outputs:
+#   random-number:
+#     description: "Random number"
+#     value: ${{ steps.random-number-generator.outputs.random-number }}
+# runs:
+#   using: "node20"
+#   main: "dist/pgrubic-action/index.js"
+# branding:
+#   icon: "code"
+#   color: "black"
+
+# inputs:
+#   extra_args:
+#     description: options to pass to pre-commit run
+#     required: false
+#     default: '--all-files'
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - name: Install pgrubic {{ inputs.pgrubic-version }}
+      if: ${{ inputs.pgrubic-version == 'latest' }}
+      run: pip install --upgrade pip pgrubic
+      shell: bash
+    - name: Install pgrubic {{ inputs.pgrubic-version }}
+      if: ${{ inputs.pgrubic-version != 'latest' }}
+      run: pip install --upgrade pip pgrubic==${{ inputs.pgrubic-version }}
+      shell: bash
+
+    # - name: Run if environment is not production
+    #   if: ${{ inputs.environment != 'production' }}
+    #   run: echo "Not production, skipping prod deploy"
+    #   shell: bash
+
+    # - name: Install pgrubic
+    #   id: install-pgrubic
+    #   run: pip install --upgrade pip pgrubic==${{ inputs.pgrubic-version }}
+    #   shell: bash
+
+    # - run: python -m pip install pre-commit
+    #   shell: bash
+    # - run: python -m pip freeze --local
+    #   shell: bash
+    # - uses: actions/cache@v4
+    #   with:
+    #     path: ~/.cache/pre-commit
+    #     key: pre-commit-3|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+    - name: Run pgrubic
+      run: pgrubic ${{ inputs.args }} ${{ inputs.src }}
+      shell: bash
+    # - run: pre-commit run --show-diff-on-failure --color=always ${{ inputs.extra_args }}
+    #   shell: bash
