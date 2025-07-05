@@ -23,5 +23,7 @@ jobs:
       - name: Self test action
         id: action
         uses: ./
+        with:
+          pgrubic-version: "0.5.3"
       - name: Output installed pgrubic version
         run: echo ${{ steps.action.outputs.installed-pgrubic-version }}
