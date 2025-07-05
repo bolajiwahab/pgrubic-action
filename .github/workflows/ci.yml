@@ -16,14 +16,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.12
       - name: Self test action
         id: action
         uses: ./
         with:
           pgrubic-version: "0.5.3"
+          args: "format --check --diff"
       - name: Output installed pgrubic version
         run: echo ${{ steps.action.outputs.installed-pgrubic-version }}
