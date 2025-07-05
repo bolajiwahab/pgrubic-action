@@ -16,7 +16,7 @@ inputs:
 outputs:
   pgrubic-version:
     description: "The installed pgrubic version. Useful when using latest."
-    value: ${{ steps.install-pgrubic.outputs.pgrubic-version }}
+    value: ${{ steps.installed-pgrubic-version.outputs.installed-pgrubic-version }}
 
 runs:
   using: composite
@@ -26,12 +26,12 @@ runs:
       with:
         python-version: "3.12"
     - name: Install pgrubic {{ inputs.pgrubic-version }}
-      id: install-pgrubic
+      # id: install-pgrubic
       if: ${{ inputs.pgrubic-version == 'latest' }}
       run: pip install --upgrade pip pgrubic
       shell: bash
     - name: Install pgrubic {{ inputs.pgrubic-version }}
-      id: install-pgrubic
+      # id: install-pgrubic
       if: ${{ inputs.pgrubic-version != 'latest' }}
       run: pip install --upgrade pip pgrubic==${{ inputs.pgrubic-version }}
       shell: bash
