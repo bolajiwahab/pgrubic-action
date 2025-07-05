@@ -1,4 +1,6 @@
 # pgrubic-action
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![CI](https://github.com/bolajiwahab/pgrubic-action/actions/workflows/ci.yml/badge.svg)](https://github.com/bolajiwahab/pgrubic-action/actions/workflows/ci.yml)
 
 A GitHub Action to run [**pgrubic**](https://bolajiwahab.github.io/pgrubic), a PostgreSQL linter and formatter for schema migrations and design best practices.
