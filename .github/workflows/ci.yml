@@ -21,6 +21,12 @@ jobs:
         with:
           python-version: 3.12
       - name: Self test action
+        id: action
         uses: ./
         with:
           pgrubic-version: 0.5.0
+
+      - run: echo Installed pgrubic ${{ steps.action.outputspgrubic-version }}
+        shell: bash
+        # env:
+        #   RANDOM_NUMBER: ${{ steps.foo.outputs.random-number }}
