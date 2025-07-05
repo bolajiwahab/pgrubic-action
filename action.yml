@@ -14,9 +14,13 @@ inputs:
     required: false
     default: "latest"
 outputs:
-  pgrubic-version:
+  installed-pgrubic-version:
     description: "The installed pgrubic version. Useful when using latest."
-    value: ${{ steps.installed-pgrubic-version.outputs.installed-pgrubic-version }}
+    # value: ${{ steps.installed-pgrubic-version.outputs.installed-pgrubic-version }}
+
+# outputs:
+#   installed-pgrubic-version:
+#     description: "A message from the action"
 
 runs:
   using: composite
