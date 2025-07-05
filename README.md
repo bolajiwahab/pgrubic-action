@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![CI](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml/badge.svg)](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml)
 
-A GitHub Action to run [**pgrubic**](https://azellar-tech.github.io/pgrubic), a PostgreSQL linter and formatter for schema migrations and design best practices.
+A GitHub Action to run [**pgrubic**](https://bolajiwahab.github.io/pgrubic), a PostgreSQL linter and formatter for schema migrations and design best practices.
 
 This action runs `pgrubic lint` by default, but it can do
 anything `pgrubic` can.
@@ -12,9 +12,9 @@ anything `pgrubic` can.
 
 | Input             | Description                                                                                                            | Default            |
 |-------------------|------------------------------------------------------------------------------------------------------------------------|--------------------|
-| `args`            | The arguments to pass to the **pgrubic** command. See [Running pgrubic](https://azellar-tech.github.io/pgrubic/cli/).   | `lint`             |
+| `args`            | The arguments to pass to the **pgrubic** command. See [Running pgrubic](https://bolajiwahab.github.io/pgrubic/cli).    | `lint`             |
 | `pgrubic-version` | The version of **pgrubic** to use, e.g., `0.6.0`.                                                                      | `latest`           |
-| `src`             | The directory or files to run **pgrubic** on.                                                                          | [github.workspace](https://docs.github.com/en/actions/reference/contexts-reference#github-context:~:text=the%20workflow%20file.-,github.workspace,-string)                                                   |
+| `src`             | The directory or files to run **pgrubic** on.                                                                          | [github.workspace](https://docs.github.com/en/actions/reference/contexts-reference#github-context:~:text=the%20workflow%20file.-,github.workspace,-string)                                 |
 
 ## Outputs
 
