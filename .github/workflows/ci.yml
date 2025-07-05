@@ -24,4 +24,4 @@ jobs:
         id: action
         uses: ./
       - name: Output installed pgrubic version
-        run: echo Installed pgrubic ${{ steps.action.outputs.installed-pgrubic-version }}
+        run: echo ${{ steps.action.outputs.installed-pgrubic-version }}
