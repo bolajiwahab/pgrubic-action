@@ -1,4 +1,5 @@
 # pgrubic-action
+[![CI](https://github.com/bolajiwahab/pgrubic-action/actions/workflows/ci.yml/badge.svg)](https://github.com/bolajiwahab/pgrubic-action/actions/workflows/ci.yml)
 
 A GitHub Action to run [**pgrubic**](https://bolajiwahab.github.io/pgrubic), a PostgreSQL linter and formatter for schema migrations and design best practices.
 
@@ -113,7 +114,7 @@ you can use the `args` input to overwrite the default option (`lint`):
 
 ## Contributing
 
-We welcome and greatly appreciate contributions. If you would like to contribute, please see the [contributing guidelines](docs/docs/contributing.md).
+We welcome and greatly appreciate contributions. If you would like to contribute, please see the [contributing guidelines](contributing.md).
 
 ## Support
 
