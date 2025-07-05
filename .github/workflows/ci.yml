@@ -26,7 +26,4 @@ jobs:
         with:
           pgrubic-version: 0.5.0
 
-      - run: echo Installed pgrubic "$RANDOM_NUMBER"
-        shell: bash
-        env:
-          RANDOM_NUMBER: ${{ steps.action.outputs.installed-pgrubic-version }}
+      - run: echo Installed pgrubic ${{ steps.action.outputs.installed-pgrubic-version }}
