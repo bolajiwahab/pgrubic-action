@@ -1,0 +1,56 @@
+---
+repos:
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.0.0
+    hooks:
+      - id: conventional-pre-commit
+        name: Lint commit messages
+        entry: conventional-pre-commit
+        language: python
+        stages: [commit-msg]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        stages: [pre-commit]
+        name: Trim Trailing Whitespace
+        entry: trailing-whitespace-fixer
+        exclude: docs/docs
+        language: python
+        types: [text]
+
+      - id: end-of-file-fixer
+        stages: [pre-commit]
+        name: Add a blank line at end of a file
+        entry: end-of-file-fixer
+        exclude: docs/docs
+        language: python
+        types: [text]
+
+      - id: mixed-line-ending
+        stages: [pre-commit]
+        name: Ensure line feed character (LF)
+        entry: mixed-line-ending
+        language: python
+        types: [text]
+        args: [--fix=lf]
+
+      - id: check-yaml
+        stages: [pre-commit]
+        name: Check yaml
+        entry: check-yaml
+        language: python
+        types: [yaml]
+        args: [--unsafe]
+
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.37.0
+    hooks:
+      - id: yamllint
+        stages: [pre-commit]
+        name: Lint yaml files
+        entry: yamllint
+        language: python
+        types: [yaml]
+        args: [--strict]
