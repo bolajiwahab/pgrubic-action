@@ -1,0 +1,35 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        stages: [pre-commit]
+        name: Trim Trailing Whitespace
+        entry: trailing-whitespace-fixer
+        exclude: docs/docs
+        language: python
+        types: [text]
+
+      - id: end-of-file-fixer
+        stages: [pre-commit]
+        name: Add a blank line at end of a file
+        entry: end-of-file-fixer
+        exclude: docs/docs
+        language: python
+        types: [text]
+
+      - id: mixed-line-ending
+        stages: [pre-commit]
+        name: Ensure line feed character (LF)
+        entry: mixed-line-ending
+        language: python
+        types: [text]
+        args: [--fix=lf]
+
+      - id: check-yaml
+        stages: [pre-commit]
+        name: Check yaml
+        entry: check-yaml
+        language: python
+        types: [yaml]
+        args: [--unsafe]
