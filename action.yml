@@ -1,3 +1,5 @@
+---
+# yamllint disable rule:line-length
 name: pgrubic-action
 description: "A GitHub Action to run pgrubic, a PostgreSQL linter and formatter for schema migrations and design best practices."
 inputs:
@@ -31,12 +33,17 @@ runs:
       shell: bash
     - name: Install pgrubic {{ inputs.pgrubic-version }}
       if: ${{ inputs.pgrubic-version != 'latest' }}
-      run: pip install --upgrade pip pgrubic==${{ inputs.pgrubic-version }}
+      env:
+        PGRUBIC_VERSION: ${{ inputs.pgrubic-version }}
+      run: pip install --upgrade pip pgrubic==$PGRUBIC_VERSION
       shell: bash
     - name: Output installed pgrubic version
       id: installed-pgrubic-version
       run: echo "installed-pgrubic-version=$(pgrubic --version)" >> $GITHUB_OUTPUT
       shell: bash
     - name: Run pgrubic
-      run: pgrubic ${{ inputs.args }} ${{ inputs.src }}
+      env:
+        PGRUBIC_ARGS: ${{ inputs.args }}
+        PGRUBIC_SRC: ${{ inputs.src }}
+      run: pgrubic $PGRUBIC_ARGS $PGRUBIC_SRC
       shell: bash
