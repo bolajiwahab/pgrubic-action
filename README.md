@@ -2,6 +2,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![CI](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml/badge.svg)](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml)
+[![release](https://github.com/azellar-tech/pgrubic-action/actions/workflows/release.yml/badge.svg)](https://github.com/azellar-tech/pgrubic-action/actions/workflows/release.yml)
 
 A GitHub Action to run [**pgrubic**](https://bolajiwahab.github.io/pgrubic), a PostgreSQL linter and formatter for schema migrations and design best practices.
 
