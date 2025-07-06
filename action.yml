@@ -2,6 +2,9 @@
 # yamllint disable rule:line-length
 name: pgrubic-action
 description: "A GitHub Action to run pgrubic, a PostgreSQL linter and formatter for schema migrations and design best practices."
+branding:
+  icon: "check"
+  color: "purple"
 inputs:
   args:
     description: "Arguments passed to pgrubic. Use `pgrubic --help` to see available options. Defaults to `lint`."
