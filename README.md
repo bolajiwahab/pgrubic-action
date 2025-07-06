@@ -1,7 +1,10 @@
 # pgrubic-action
 
+[![pgrubic-action](https://img.shields.io/badge/pgrubic-action-purple.svg)](https://github.com/azellar-tech/pgrubic-action/)
+[![Version](https://img.shields.io/github/v/release/azellar-tech/pgrubic-action?label=version)](https://github.com/marketplace/actions/pgrubic-action)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![CI](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml/badge.svg)](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml)
+[![release](https://github.com/azellar-tech/pgrubic-action/actions/workflows/release.yml/badge.svg)](https://github.com/azellar-tech/pgrubic-action/actions/workflows/release.yml)
 
 A GitHub Action to run [**pgrubic**](https://bolajiwahab.github.io/pgrubic), a PostgreSQL linter and formatter for schema migrations and design best practices.
 
