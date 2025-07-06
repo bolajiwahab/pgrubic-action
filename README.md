@@ -1,6 +1,6 @@
 # pgrubic-action
 
-[![pgrubic-action](https://img.shields.io/badge/pgrubic-action-purple.svg)](https://github.com/bolajiwahab/pgrubic/)
+[![pgrubic-action](https://img.shields.io/badge/pgrubic-action-purple.svg)](https://github.com/azellar-tech/pgrubic-action/)
 [![Version](https://img.shields.io/github/v/tag/azellar-tech/pgrubic-action?label=version)](https://github.com/marketplace/actions/pgrubic-action)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![CI](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml/badge.svg)](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml)
