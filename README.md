@@ -1,10 +1,10 @@
 # pgrubic-action
 
-[![pgrubic-action](https://img.shields.io/badge/pgrubic-action-purple.svg)](https://github.com/azellar-tech/pgrubic-action/)
-[![Version](https://img.shields.io/github/v/release/azellar-tech/pgrubic-action?label=version)](https://github.com/marketplace/actions/pgrubic-action)
+[![pgrubic-action](https://img.shields.io/badge/pgrubic-action-purple.svg)](https://github.com/azellarhq/pgrubic-action/)
+[![Version](https://img.shields.io/github/v/release/azellarhq/pgrubic-action?label=version)](https://github.com/marketplace/actions/pgrubic-action)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-[![CI](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml/badge.svg)](https://github.com/azellar-tech/pgrubic-action/actions/workflows/ci.yml)
-[![release](https://github.com/azellar-tech/pgrubic-action/actions/workflows/release.yml/badge.svg)](https://github.com/azellar-tech/pgrubic-action/actions/workflows/release.yml)
+[![CI](https://github.com/azellarhq/pgrubic-action/actions/workflows/ci.yml/badge.svg)](https://github.com/azellarhq/pgrubic-action/actions/workflows/ci.yml)
+[![release](https://github.com/azellarhq/pgrubic-action/actions/workflows/release.yml/badge.svg)](https://github.com/azellarhq/pgrubic-action/actions/workflows/release.yml)
 
 A GitHub Action to run [**pgrubic**](https://bolajiwahab.github.io/pgrubic), a PostgreSQL linter and formatter for schema migrations and design best practices.
 
@@ -30,13 +30,13 @@ anything `pgrubic` can.
 ### Basic
 
 ```yaml
-- uses: azellar-tech/pgrubic-action@v1
+- uses: azellarhq/pgrubic-action@v1
 ```
 
 ### Specifying a different source directory
 
 ```yaml
-- uses: azellar-tech/pgrubic-action@v1
+- uses: azellarhq/pgrubic-action@v1
   with:
     src: "./src"
 ```
@@ -44,7 +44,7 @@ anything `pgrubic` can.
 ### Specifying multiple files
 
 ```yaml
-- uses: azellar-tech/pgrubic-action@v1
+- uses: azellarhq/pgrubic-action@v1
   with:
     src: >-
       path/to/file1.sql
@@ -54,7 +54,7 @@ anything `pgrubic` can.
 ### Specifying multiple directories
 
 ```yaml
-- uses: azellar-tech/pgrubic-action@v1
+- uses: azellarhq/pgrubic-action@v1
   with:
     src: >-
       path/to/dir1
@@ -64,7 +64,7 @@ anything `pgrubic` can.
 ### Specifying multiple files and directories
 
 ```yaml
-- uses: azellar-tech/pgrubic-action@v1
+- uses: azellarhq/pgrubic-action@v1
   with:
     src: >-
       path/to/file1.sql
@@ -78,7 +78,7 @@ anything `pgrubic` can.
 This action adds **pgrubic** to the PATH, so you can use it in subsequent steps.
 
 ```yaml
-- uses: azellar-tech/pgrubic-action@v1
+- uses: azellarhq/pgrubic-action@v1
 - run: pgrubic lint
 - run: pgrubic format
 ```
@@ -88,7 +88,7 @@ you can use the `args` input to overwrite the default option (`lint`):
 
 ```yaml
 - name: Install pgrubic without running lint or format
-  uses: azellar-tech/pgrubic-action@v1
+  uses: azellarhq/pgrubic-action@v1
   with:
     args: "--version"
 ```
@@ -96,7 +96,7 @@ you can use the `args` input to overwrite the default option (`lint`):
 ### Use `pgrubic format`
 
 ```yaml
-- uses: azellar-tech/pgrubic-action@v1
+- uses: azellarhq/pgrubic-action@v1
   with:
     args: "format --check --diff"
 ```
@@ -104,7 +104,7 @@ you can use the `args` input to overwrite the default option (`lint`):
 ### Install a specific version of pgrubic
 
 ```yaml
-- uses: azellar-tech/pgrubic-action@v1
+- uses: azellarhq/pgrubic-action@v1
   with:
     pgrubic-version: "0.6.0"
 ```
@@ -112,7 +112,7 @@ you can use the `args` input to overwrite the default option (`lint`):
 ### Install the latest version of pgrubic
 
 ```yaml
-- uses: azellar-tech/pgrubic-action@v1
+- uses: azellarhq/pgrubic-action@v1
   with:
     pgrubic-version: "latest"
 ```
@@ -123,7 +123,7 @@ We welcome and greatly appreciate contributions. If you would like to contribute
 
 ## Support
 
-Encountering issues? Take a look at the existing GitHub [issues](https://github.com/azellar-tech/pgrubic-action/issues), and don't hesitate to open a new one.
+Encountering issues? Take a look at the existing GitHub [issues](https://github.com/azellarhq/pgrubic-action/issues), and don't hesitate to open a new one.
 
 ## License
 
